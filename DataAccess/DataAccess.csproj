@@ -40,10 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\AppointmentEntity.cs" />
+    <Compile Include="Entity\BaseEntity.cs" />
+    <Compile Include="Entity\DoctorEntity.cs" />
+    <Compile Include="Entity\UserEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Entity\" />
     <Folder Include="Repository\" />
     <Folder Include="Service\" />
   </ItemGroup>
