@@ -1,0 +1,45 @@
+﻿@using DataAccess.Entity;
+.
+@{
+    ViewBag.Title = "Add/Edit Appointment";
+}
+<table class="table" align="center">
+    <h1 style="font-size:26px;">Add/Edit Appointment</h1>
+    <tr>
+        <td>
+            @{
+                AppointmentEntity appointment = (AppointmentEntity)ViewData["appointment"];
+            }
+            <form action="/AppointmentsManager/EditAppointment" method="post">
+                <input type="hidden" name="Id" value="@appointment.Id" />
+                <fieldset>
+                    <table>
+                        <tr>
+                            <td>UserId:</td>
+                            <td><input type="number" name="UserId" value="@appointment.UserId" /></td>
+                        </tr>
+                        <tr>
+                            <td>DoctorId:</td>
+                            <td><input type="number" name="DoctorId" value="@appointment.DoctorId" /></td>
+                        </tr>
+                        <tr>
+                            <td>Symptoms:</td>
+                            <td><input type="text" name="Symptoms" value="@appointment.Symptoms" /></td>
+                        </tr>
+                        <tr>
+                            <td>Date and Hour:</td>
+                            <td><input type="date" name="DateHour" value="@appointment.DateHour" /></td>
+                        </tr>
+                        <tr>
+                            <td>Status:</td>
+                            <td><input type="text" name="Status" value="@appointment.Status" /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="submit" value="Save" />&nbsp;<a href="/AppointmentsManager/Index">Cancel</a></td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </form>
+        </td>
+    </tr>
+</table>
