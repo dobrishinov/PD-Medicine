@@ -5,7 +5,7 @@
     using PD_Medicine.Models;
     using System.Web.Mvc;
 
-    public class AppointmentsManagerController : Controller
+    public class DoctorsAppointmentsManagerController : Controller
     {
         public ActionResult Index()
         {
@@ -13,7 +13,18 @@
                 return RedirectToAction("Login", "Home");
 
             AppointmentsRepository appointmentsRepository = new AppointmentsRepository();
-            ViewData["appointments"] = appointmentsRepository.GetAll(t => t.UserId == AuthenticationManager.LoggedUser.Id);
+            ViewData["appointments"] = appointmentsRepository.GetAll(t => t.DoctorId == AuthenticationManager.LoggedUser.Id);
+
+            return View();
+        }
+
+        public ActionResult Events()
+        {
+            if (AuthenticationManager.LoggedUser == null)
+                return RedirectToAction("Login", "Home");
+
+            AppointmentsRepository appointmentsRepository = new AppointmentsRepository();
+            ViewData["appointments"] = appointmentsRepository.GetAll(t => t.DoctorId == AuthenticationManager.LoggedUser.Id);
 
             return View();
         }

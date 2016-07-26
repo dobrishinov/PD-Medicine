@@ -129,6 +129,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DoctorsAppointmentsManagerController.cs" />
     <Compile Include="Controllers\AppointmentsManagerController.cs" />
     <Compile Include="Controllers\DoctorsManagerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -183,6 +184,9 @@
     <Content Include="Views\DoctorsManager\Index.cshtml" />
     <Content Include="Views\AppointmentsManager\Index.cshtml" />
     <Content Include="Views\AppointmentsManager\EditAppointment.cshtml" />
+    <Content Include="Views\DoctorsAppointmentsManager\Index.cshtml" />
+    <Content Include="Views\DoctorsAppointmentsManager\EditStatus.cshtml" />
+    <Content Include="Views\DoctorsAppointmentsManager\Events.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
