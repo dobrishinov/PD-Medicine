@@ -1,0 +1,58 @@
+﻿@using DataAccess.Entity;
+.
+@{
+    ViewBag.Title = "Add/Edit Doctor";
+}
+<table class="table" align="center">
+    <h1 style="font-size:26px;">Add/Edit Doctor</h1>
+    <tr>
+        <td>
+            @{
+                DoctorEntity doctor = (DoctorEntity)ViewData["doctor"];
+            }
+            <form action="/DoctorsManager/EditDoctor" method="post">
+                <input type="hidden" name="Id" value="@doctor.Id" />
+                <input type="hidden" name="UserStatus" value="True" />
+                <fieldset>
+                    <table>
+                        <tr>
+                            <td>First Name:</td>
+                            <td><input type="text" name="FirstName" value="@doctor.FirstName" /></td>
+                        </tr>
+                        <tr>
+                            <td>Last Name:</td>
+                            <td><input type="text" name="LastName" value="@doctor.LastName" /></td>
+                        </tr>
+                        <tr>
+                            <td>Username:</td>
+                            <td><input type="text" name="Username" value="@doctor.Username" /></td>
+                        </tr>
+                        <tr>
+                            <td>Password:</td>
+                            <td><input type="password" name="Password" value="@doctor.Password" /></td>
+                        </tr>
+                        <tr>
+                            <td>DoctorType:</td>
+                            <td><input type="text" name="DoctorType" value="@doctor.DoctorType" /></td>
+                        </tr>
+                        <tr>
+                            <td>Description:</td>
+                            <td><input type="text" name="Description" value="@doctor.Description" /></td>
+                        </tr>
+                        <tr>
+                            <td>Address:</td>
+                            <td><input type="text" name="Address" value="@doctor.Address" /></td>
+                        </tr>
+                        <tr>
+                            <td>Phone:</td>
+                            <td><input type="text" name="Phone" value="@doctor.Phone" /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="submit" value="Save" />&nbsp;<a href="/DoctorsManager/Index">Cancel</a></td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </form>
+        </td>
+    </tr>
+</table>

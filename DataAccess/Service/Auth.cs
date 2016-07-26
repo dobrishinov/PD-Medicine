@@ -17,6 +17,12 @@
             {
                 DoctorsRepository doctorRepository = new DoctorsRepository();
                 LoggedUser = doctorRepository.GetAll(u => u.Username == username && u.Password == password).FirstOrDefault();
+
+            }
+            if (LoggedUser == null)
+            {
+                AdminRepository adminRepository = new AdminRepository();
+                LoggedUser = adminRepository.GetAll(u => u.Username == username && u.Password == password).FirstOrDefault();
             }
         }
     }

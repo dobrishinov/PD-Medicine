@@ -1,11 +1,7 @@
 ﻿namespace DataAccess.Entity
 {
-    public class AdminEntity : BaseEntity
+    public class AdminEntity : UserEntity
     {
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public bool AdminStatus { get; set; }
+        public string Admin { get; set; }
     }
 }

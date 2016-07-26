@@ -66,7 +66,8 @@
             a.Password = "admin";
             a.LastName = "admin";
             a.FirstName = "admin";
-            a.AdminStatus = true;
+            a.UserStatus = true;
+            a.Admin = "admin";
             arepo.Save(a);
             return View();
         }
