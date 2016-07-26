@@ -8,18 +8,16 @@
     {
         public UserEntity LoggedUser { get; private set; }
 
-        public void AuthenticateUser(string username, string password)
+        public void Authenticate(string username, string password)
         {
             UsersRepository usersRepository = new UsersRepository();
             LoggedUser = usersRepository.GetAll(u => u.Username == username && u.Password == password).FirstOrDefault();
-        }
 
-        public AdminEntity LoggedAdmin { get; private set; }
-
-        public void AuthenticateAdmin(string username, string password)
-        {
-            AdminRepository adminRepository = new AdminRepository();
-            LoggedAdmin = adminRepository.GetAll(u => u.Username == username && u.Password == password).FirstOrDefault();
+            if (LoggedUser == null)
+            {
+                DoctorsRepository doctorRepository = new DoctorsRepository();
+                LoggedUser = doctorRepository.GetAll(u => u.Username == username && u.Password == password).FirstOrDefault();
+            }
         }
     }
 }

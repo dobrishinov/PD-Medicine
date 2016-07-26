@@ -96,7 +96,7 @@
             d.Description = "Best Doctor";
             d.Address = "Plovdiv";
             d.Phone = "Phone";
-            d.DoctorStatus = true;
+            d.UserStatus = true;
             drepo.Save(d);
             return View();
         }

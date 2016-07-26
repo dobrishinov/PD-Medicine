@@ -8,7 +8,7 @@
     {
         if (PD_Medicine.Models.AuthenticationManager.LoggedUser.UserStatus == false)
         {
-            <li>@Html.ActionLink("ADD appointment", "", "AddAppointment")</li>
+            <li>@Html.ActionLink("Add appointment", "", "AddAppointment")</li>
             <li>@Html.ActionLink("View appointments", "", "ViewAppointment")</li>
             <li style="float: left; width: 150px; text-decoration: none; color: black;"><a href="/Home/Logout">Log out</a></li>
         }
@@ -20,17 +20,5 @@
         }
     }
 
-    @if (PD_Medicine.Models.AuthenticationManager.LoggedAdmin == null)
-    {
-        <li style="float: left; width: 150px; text-decoration: none; color: black;"><a href="/Home/Login">Log in</a></li>
-    }
-    else
-    {
-        if (PD_Medicine.Models.AuthenticationManager.LoggedAdmin.AdminStatus == true)
-        {
-            <li>@Html.ActionLink("Add Doctor", "", "AddDoctor")</li>
-            <li>@Html.ActionLink("View Doctors", "", "ViewDoctors")</li>
-            <li style="float: left; width: 150px; text-decoration: none; color: black;"><a href="/Home/Logout">Log out</a></li>
-        }
-    }
+    
 </ul>
