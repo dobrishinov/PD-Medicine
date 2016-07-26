@@ -3,6 +3,7 @@
     using DataAccess.Entity;
     using DataAccess.Repository;
     using PD_Medicine.Models;
+    using System.Collections.Generic;
     using System.Web.Mvc;
 
     public class AppointmentsManagerController : Controller
@@ -59,5 +60,14 @@
 
             return RedirectToAction("Index", "AppointmentsManager");
         }
+
+        //public void GetDoctors()
+        //{
+        //    List<SelectListItem> list = new List<SelectListItem>();
+        //    foreach (var users in )
+        //    {
+        //        list.Add(users.FirstName);
+        //    }
+        //}
     }
 }

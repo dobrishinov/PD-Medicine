@@ -28,7 +28,10 @@
                         </tr>
                         <tr>
                             <td>Date and Hour:</td>
-                            <td><input type="date" name="DateHour" value="@appointment.DateHour" /></td>
+                            <td>
+                                <input type="text" id="datetimepicker" name="DateHour" value="@appointment.DateHour">
+
+                            </td>
                         </tr>
                         <tr>
                             <td>Status:</td>
@@ -36,6 +39,14 @@
                         </tr>
                         <tr>
                             <td colspan="2"><input type="submit" value="Save" />&nbsp;<a href="/AppointmentsManager/Index">Cancel</a></td>
+                        </tr>
+                        <tr>
+                            <select>
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                            </select>
                         </tr>
                     </table>
                 </fieldset>
