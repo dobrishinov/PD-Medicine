@@ -56,7 +56,7 @@
             AppointmentsRepository appointmentsRepository = new AppointmentsRepository();
             appointmentsRepository.Save(appointment);
 
-            return RedirectToAction("Index", "AppointmentsManager");
+            return RedirectToAction("Index", "DoctorsAppointmentsManager");
         }
 
         public ActionResult DeleteAppointment(int id)

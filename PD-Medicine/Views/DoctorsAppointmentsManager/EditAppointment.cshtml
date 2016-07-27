@@ -1,18 +1,17 @@
 ﻿@using DataAccess.Entity;
 .
 @{
-    ViewBag.Title = "Add/Edit Appointment";
+    ViewBag.Title = "Request Manager";
 }
 <table class="table" align="center">
-    <h1 style="font-size:26px;">Add/Edit Appointment</h1>
+    <h1 style="font-size:26px;">Request Manager</h1>
     <tr>
         <td>
             @{
                 AppointmentEntity appointment = (AppointmentEntity)ViewData["appointment"];
             }
-            <form action="/AppointmentsManager/EditAppointment" method="post">
+            <form action="/DoctorsAppointmentsManager/EditAppointment" method="post">
                 <input type="hidden" name="Id" value="@appointment.Id" />
-                <input type="hidden" name="Status" value="Null" />
                 <fieldset>
                     <table>
                         <tr>
@@ -35,11 +34,13 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2"><input type="submit" value="Save" />&nbsp;<a href="/AppointmentsManager/Index">Cancel</a></td>
+                            <td>Accept Appointments:</td>
+                            <td>@Html.CheckBox("Status", false)</td>
                         </tr>
                         <tr>
-                           
+                            <td colspan="2"><input type="submit" value="Save" />&nbsp;<a href="/DoctorsAppointmentsManager/Index">Cancel</a></td>
                         </tr>
+                        <tr></tr>
                     </table>
                 </fieldset>
             </form>

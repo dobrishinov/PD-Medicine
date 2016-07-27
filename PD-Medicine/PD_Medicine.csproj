@@ -187,7 +187,7 @@
     <Content Include="Views\AppointmentsManager\Index.cshtml" />
     <Content Include="Views\AppointmentsManager\EditAppointment.cshtml" />
     <Content Include="Views\DoctorsAppointmentsManager\Index.cshtml" />
-    <Content Include="Views\DoctorsAppointmentsManager\EditStatus.cshtml" />
+    <Content Include="Views\DoctorsAppointmentsManager\EditAppointment.cshtml" />
     <Content Include="Views\DoctorsAppointmentsManager\Events.cshtml" />
   </ItemGroup>
   <ItemGroup>

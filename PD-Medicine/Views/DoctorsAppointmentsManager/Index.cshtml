@@ -23,30 +23,33 @@
         var edit = "/DoctorsAppointmentsManager/EditAppointment?id=" + item.Id;
         var delete = "/DoctorsAppointmentsManager/DeleteAppointment?id=" + item.Id;
 
-        <tr>
-            <td>
-                @item.Id
-            </td>
-            <td>
-                @item.UserId
-            </td>
-            <td>
-                @item.DoctorId
-            </td>
-            <td>
-                @item.Symptoms
-            </td>
-            <td>
-                @item.DateHour
-            </td>
-            <td>
-                @item.Status
-            </td>
-            <td>
-                <a href="@edit">Edit</a> |
-                <a href="@delete">Delete</a>
-            </td>
-        </tr>
+        if (item.Status == false)
+        {
+            <tr>
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    @item.UserId
+                </td>
+                <td>
+                    @item.DoctorId
+                </td>
+                <td>
+                    @item.Symptoms
+                </td>
+                <td>
+                    @item.DateHour
+                </td>
+                <td>
+                    @item.Status
+                </td>
+                <td>
+                    <a href="@edit">Edit</a> |
+                    <a href="@delete">Delete</a>
+                </td>
+            </tr>
+        }
     }
 
-</table>
+        </table>

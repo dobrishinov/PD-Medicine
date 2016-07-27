@@ -16,32 +16,41 @@
         <td>Symptoms</td>
         <td>Date and Hour</td>
         <td>Status</td>
+        <td>Actions</td>
     </tr>
+
     @foreach (var item in (IEnumerable<AppointmentEntity>)ViewData["appointments"])
     {
         var edit = "/DoctorsAppointmentsManager/EditAppointment?id=" + item.Id;
         var delete = "/DoctorsAppointmentsManager/DeleteAppointment?id=" + item.Id;
 
-        <tr>
-            <td>
-                @item.Id
-            </td>
-            <td>
-                @item.UserId
-            </td>
-            <td>
-                @item.DoctorId
-            </td>
-            <td>
-                @item.Symptoms
-            </td>
-            <td>
-                @item.DateHour
-            </td>
-            <td>
-                @item.Status
-            </td>
-        </tr>
+        if (item.Status == true)
+        {
+            <tr>
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    @item.UserId
+                </td>
+                <td>
+                    @item.DoctorId
+                </td>
+                <td>
+                    @item.Symptoms
+                </td>
+                <td>
+                    @item.DateHour
+                </td>
+                <td>
+                    @item.Status
+                </td>
+                <td>
+                    <a href="@edit">Edit</a> |
+                    <a href="@delete">Delete</a>
+                </td>
+            </tr>
+        }
     }
 
 </table>
