@@ -6,11 +6,10 @@
     ViewBag.Title = "Appointments Manager";
 }
 
-<h2>Requests Manager</h2>
-
-<table class="table">
+<h2>Appointments Request Manager</h2>
+<br />
+<table class="table table-striped">
     <tr>
-        <td>ID</td>
         <td>Patient Username</td>
         <td>Symptoms</td>
         <td>Date and Hour</td>
@@ -26,9 +25,6 @@
         {
             <tr>
                 <td>
-                    @item.Id
-                </td>
-                <td>
                     @item.Username
                 </td>
                 <td>
@@ -41,8 +37,8 @@
                     @item.Status
                 </td>
                 <td>
-                    <a href="@edit">Edit</a> |
-                    <a href="@delete">Delete</a>
+                    <a href="@edit" class="btn btn-success">Edit</a> |
+                    <a href="@delete" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
         }

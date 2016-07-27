@@ -7,39 +7,32 @@
     AppointmentEntity appointment = (AppointmentEntity)ViewData["appointment"];
 }
 
-<table class="table" align="center">
-    <h1 style="font-size:26px;">Patient Appointment with username: @appointment.Username</h1>
-    <tr>
-        <td>
-            <form action="/DoctorsAppointmentsManager/EditAppointment" method="post">
+    <br />
+    <br />
+    <p style="font-size:26px;"><span style="font-size:26px;">Appointment for:</span> <span style="color:#303030">@appointment.Username</span></p>
+    <hr />
+            <form action="/DoctorsAppointmentsManager/EditAppointment" method="post" class="form-group">
                 <input type="hidden" name="Id" value="@appointment.Id" />
                 <input type="hidden" name="UserId" value="@appointment.UserId" />
                 <input type="hidden" name="DoctorId" value="@appointment.DoctorId" />
                 <input type="hidden" name="Username" value="@appointment.Username" />
-                <fieldset>
-                    <table>
-                        <tr>
-                            <td>Symptoms:</td>
-                            <td><input type="text" name="Symptoms" value="@appointment.Symptoms" /></td>
-                        </tr>
-                        <tr>
-                            <td>Date and Hour:</td>
-                            <td>
-                                <input type="text" id="datetimepicker" name="DateHour" value="@appointment.DateHour">
 
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Accept Appointments:</td>
-                            <td>@Html.CheckBox("Status", false)</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><input type="submit" value="Save" />&nbsp;<a href="/DoctorsAppointmentsManager/Index">Cancel</a></td>
-                        </tr>
-                        <tr></tr>
-                    </table>
-                </fieldset>
+                <div class="form-group">
+                    <label for="symptoms">Symptoms</label>
+                    <input type="text" class="form-control" name="Symptoms" value="@appointment.Symptoms" placeholder="Add your symptoms" />
+                </div>
+
+                <div class="form-group">
+                    <label for="dateHour">Date and Hour</label>
+                    <input type="text" class="form-control" id="datetimepicker" name="DateHour" value="@appointment.DateHour" placeholder="Choose Day and Hour">
+                </div>
+
+                <div class="form-group">
+                    <label for="acceptAppointments">Accept Appointments:</label>
+                    <br />
+                    <label class="checkbox-inline">&nbsp; @Html.CheckBox("Status", false) Accept</label>
+                </div>
+
+                <input class="btn btn-success" type="submit" value="Save" />&nbsp;<a class="btn btn-danger" href="/DoctorsAppointmentsManager/Index">Cancel</a>
+
             </form>
-        </td>
-    </tr>
-</table>
