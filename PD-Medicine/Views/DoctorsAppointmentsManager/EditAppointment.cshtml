@@ -3,25 +3,21 @@
 @{
     ViewBag.Title = "Request Manager";
 }
+@{
+    AppointmentEntity appointment = (AppointmentEntity)ViewData["appointment"];
+}
+
 <table class="table" align="center">
-    <h1 style="font-size:26px;">Request Manager</h1>
+    <h1 style="font-size:26px;">Patient Appointment with username: @appointment.Username</h1>
     <tr>
         <td>
-            @{
-                AppointmentEntity appointment = (AppointmentEntity)ViewData["appointment"];
-            }
             <form action="/DoctorsAppointmentsManager/EditAppointment" method="post">
                 <input type="hidden" name="Id" value="@appointment.Id" />
+                <input type="hidden" name="UserId" value="@appointment.UserId" />
+                <input type="hidden" name="DoctorId" value="@appointment.DoctorId" />
+                <input type="hidden" name="Username" value="@appointment.Username" />
                 <fieldset>
                     <table>
-                        <tr>
-                            <td>User Id:</td>
-                            <td><input type="number" name="UserId" value="@appointment.UserId" /></td>
-                        </tr>
-                        <tr>
-                            <td>Doctor Id:</td>
-                            <td><input type="number" name="DoctorId" value="@appointment.DoctorId" /></td>
-                        </tr>
                         <tr>
                             <td>Symptoms:</td>
                             <td><input type="text" name="Symptoms" value="@appointment.Symptoms" /></td>

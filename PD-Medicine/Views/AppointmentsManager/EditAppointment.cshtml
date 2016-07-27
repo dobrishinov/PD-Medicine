@@ -1,4 +1,5 @@
 ﻿@using DataAccess.Entity;
+  
 .
 @{
     ViewBag.Title = "Add/Edit Appointment";
@@ -12,13 +13,11 @@
             }
             <form action="/AppointmentsManager/EditAppointment" method="post">
                 <input type="hidden" name="Id" value="@appointment.Id" />
-                <input type="hidden" name="Status" value="Null" />
+                <input type="hidden" name="Status" value="False" />
+                <input type="hidden" name="UserId" value="@appointment.UserId" />
+                <input type="hidden" name="Username" value="@appointment.Username" />
                 <fieldset>
                     <table>
-                        <tr>
-                            <td>User Id:</td>
-                            <td><input type="number" name="UserId" value="@appointment.UserId" /></td>
-                        </tr>
                         <tr>
                             <td>Doctor Id:</td>
                             <td><input type="number" name="DoctorId" value="@appointment.DoctorId" /></td>

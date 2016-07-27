@@ -33,7 +33,13 @@
             else
                 appointment = AppointmentsRepository.GetById(id.Value);
 
+            appointment.UserId = AuthenticationManager.LoggedUser.Id;
+            appointment.Username = AuthenticationManager.LoggedUser.Username;
+
+            DoctorsRepository repo = new DoctorsRepository();
+
             ViewData["appointment"] = appointment;
+            ViewData["drop..."] = appointment;
 
             return View();
         }
