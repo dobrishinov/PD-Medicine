@@ -14,9 +14,14 @@
         {
             if (AuthenticationManager.LoggedUser == null)
                 return RedirectToAction("Login", "Home");
-
+            DoctorsRepository doctorRepository = new DoctorsRepository();
             AppointmentsRepository appointmentsRepository = new AppointmentsRepository();
-            ViewData["appointments"] = appointmentsRepository.GetAll(t => t.UserId == AuthenticationManager.LoggedUser.Id);
+            var appointments = appointmentsRepository.GetAll(t => t.UserId == AuthenticationManager.LoggedUser.Id);
+            foreach (var item in appointments)
+            {
+                item.DoctorUsername = doctorRepository.GetById(item.DoctorId).Username;
+            }
+            ViewData["appointments"] = appointments;
 
             return View();
         }
