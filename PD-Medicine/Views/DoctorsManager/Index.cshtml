@@ -7,11 +7,11 @@
 }
 
 <h2>Doctors Manager</h2>
-
+<hr />
 <p>
-    @Html.ActionLink("Create New", "EditDoctor", "DoctorsManager")
+    @Html.ActionLink("Create New Doctor", "EditDoctor", "DoctorsManager", new { @class = "btn btn btn-success" })
 </p>
-<table class="table">
+<table class="table table-striped">
     <tr>
         <td>ID</td>
         <td>Username</td>
@@ -50,8 +50,8 @@
                 @item.Phone
             </td>
             <td>
-                <a href="@edit">Edit</a> |
-                <a href="@delete">Delete</a>
+                <a href="@edit" class="btn btn-success">Edit</a> |
+                <a href="@delete" class="btn btn-danger">Delete</a>
             </td>
         </tr>
     }

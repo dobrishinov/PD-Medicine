@@ -21,7 +21,7 @@
 
                 <div class="form-group">
                     <label for="symptoms">Symptoms</label>
-                    <input type="text" class="form-control" name="Symptoms" value="@appointment.Symptoms" placeholder="Add your symptoms"/>
+                    <input type="text" class="form-control" name="Symptoms" value="@appointment.Symptoms" placeholder="Add your symptoms" required/>
                 </div>
 
                 <div class="form-group">
@@ -38,7 +38,7 @@
 
                 <div class="form-group">
                     <label for="dateHour">Date and Hour</label>
-                    <input type="text" class="form-control" id="datetimepicker" name="DateHour" value="@appointment.DateHour" placeholder="Choose Day and Hour">
+                    <input type="text" class="form-control" id="datetimepicker" name="DateHour" value="@appointment.DateHour" placeholder="Choose Day and Hour" required>
                 </div>
 
                 <input class="btn btn-success" type="submit" value="Save" />&nbsp;<a class="btn btn-danger" href="/AppointmentsManager/Index">Cancel</a>

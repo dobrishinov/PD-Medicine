@@ -41,7 +41,7 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     <script>
-        jQuery('#datetimepicker').datetimepicker();
+        jQuery('#datetimepicker').datetimepicker({ defaultDate: new Date() });
     </script>
 </body>
 </html>
