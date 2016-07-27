@@ -7,15 +7,14 @@
 }
 
 <h2>Appointments Manager</h2>
-
+<hr />
 <h3>Confirm appointments</h3>
 <p>
-    @Html.ActionLink("Create New", "EditAppointment", "AppointmentsManager")
+    @Html.ActionLink("Add New Appointment", "EditAppointment", "AppointmentsManager", new {@class = "btn btn btn-success" })
 </p>
-<table class="table">
+<table class="table table-striped">
     <tr>
-        <td>ID</td>
-        <td>Username</td>
+        <td>User</td>
         <td>DoctorId</td>
         <td>Symptoms</td>
         <td>Date and Hour</td>
@@ -29,9 +28,6 @@
         if (item.Status == true)
         {
         <tr>
-            <td>
-                @item.Id
-            </td>
             <td>
                 @item.Username
             </td>
@@ -48,8 +44,8 @@
                 @item.Status
             </td>
             <td>
-                <a href="@edit">Edit</a> |
-                <a href="@delete">Delete</a>
+                <a href="@edit" class="btn btn-success">Edit</a> |
+                <a href="@delete" class="btn btn-danger">Delete</a>
             </td>
         </tr>
         }
@@ -59,10 +55,9 @@
 
 <h3>Pending or Rejected appointments</h3>
 
-<table class="table">
+<table class="table table-striped">
     <tr>
-        <td>ID</td>
-        <td>Username</td>
+        <td>User</td>
         <td>DoctorId</td>
         <td>Symptoms</td>
         <td>Date and Hour</td>
@@ -76,9 +71,6 @@
         if (item.Status == false)
         {
             <tr>
-                <td>
-                    @item.Id
-                </td>
                 <td>
                     @item.Username
                 </td>
@@ -95,8 +87,8 @@
                     @item.Status
                 </td>
                 <td>
-                    <a href="@edit">Edit</a> |
-                    <a href="@delete">Delete</a>
+                    <a href="@edit" class="btn btn-success">Edit</a> |
+                    <a href="@delete" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
         }

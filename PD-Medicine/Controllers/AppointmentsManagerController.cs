@@ -3,7 +3,9 @@
     using DataAccess.Entity;
     using DataAccess.Repository;
     using PD_Medicine.Models;
+    using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Web.Mvc;
 
     public class AppointmentsManagerController : Controller
@@ -38,18 +40,30 @@
 
             DoctorsRepository repo = new DoctorsRepository();
 
+            List<DoctorEntity> docs = repo.GetAll().ToList();
             ViewData["appointment"] = appointment;
-            ViewData["drop..."] = appointment;
+            var selectList = new List<SelectListItem>();
+            foreach (var doc in docs)
+            {
+                selectList.Add(new SelectListItem
+                {
+                    Text = doc.FirstName,
+                    Value = doc.Id.ToString()
+                });
+            }
 
+            ViewData["selectList"] = selectList;
             return View();
         }
         [HttpPost]
         public ActionResult EditAppointment(AppointmentEntity appointment)
         {
             if (AuthenticationManager.LoggedUser == null)
-                return RedirectToAction("Login", "Home");
+            return RedirectToAction("Login", "Home");
 
+            appointment.DoctorId = Convert.ToInt32(Request.Form["doctor"]);
             AppointmentsRepository appointmentsRepository = new AppointmentsRepository();
+
             appointmentsRepository.Save(appointment);
 
             return RedirectToAction("Index", "AppointmentsManager");
